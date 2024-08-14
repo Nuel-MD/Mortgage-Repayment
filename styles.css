@@ -1,0 +1,555 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body{
+    font-size: 1rem;
+    margin: 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    position: relative;
+}
+
+h1{
+    color: hsl(202, 55%, 16%);
+}
+.calculator{
+    padding: 25px;
+
+}
+.calculator  p{
+    text-decoration: underline;
+    text-underline-offset: 0.21875rem;
+    color: hsl(200, 24%, 40%);
+    font-weight: 500;
+}
+
+label{
+    color: hsl(200, 24%, 40%);
+
+}
+div > label{
+    color: hsl(202, 55%, 16%) !important;
+    font-weight: 500;
+}
+input{
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid hsl(200, 24%, 40%);
+    position: relative;
+    padding-left: 1.5rem;
+    outline: none;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+
+}
+#amount{
+    padding-left: 3.5rem;
+    
+
+}
+#Term{
+    padding-right: 4rem;
+}
+.point label{
+    color: hsla(202, 55%, 16%, 0.8) !important;
+    font-weight: 500;
+    
+}
+.TICK {
+    color: hsl(202, 55%, 16%);
+    font-weight: 700;
+}
+input:hover{
+    cursor: url("./assets/images/pointinghand.svg"), pointer;
+
+}
+#Euro{
+    background-color: hsl(202, 86%, 94%);
+    height: 50px;
+    border-top-left-radius : 7px;
+    border-bottom-left-radius : 7px;
+
+    width: 40px;
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(200, 24%, 40%);
+    top: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(61.9%);
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-left: 1px  solid hsl(200, 24%, 40%);
+
+}
+
+#years{
+    background-color: hsl(202, 86%, 94%);
+    height: 50px;
+    border-top-right-radius : 7px;
+    border-bottom-right-radius : 7px;
+
+    width:4rem;
+    position: absolute;
+    font-size: 17.6px;
+    font-weight: 700;
+    color: hsl(200, 24%, 40%);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    transform: translateY(62%);
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-right: 1px  solid hsl(200, 24%, 40%);
+
+}
+#percent{
+    background-color: hsl(202, 86%, 94%);
+    height: 50px;
+    border-top-right-radius : 7px;
+    border-bottom-right-radius : 7px;
+
+    width:40px;
+    position: absolute;
+    font-size: 17.6px;
+    font-weight: 700;
+    color: hsl(200, 24%, 40%);
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    transform: translateY(62%);
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-right: 1px  solid hsl(200, 24%, 40%);
+
+}
+#Rate{
+    padding-right: 2.8rem;
+}
+.radio{
+    border: 1px solid hsl(200, 24%, 40%);
+    height: 50px;
+    gap: 14.72px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+
+}
+.radio:hover{
+    border: 1px solid hsl(61, 70%, 52%);
+    cursor: url("./assets/images/pointinghand.svg"), pointer;
+
+}
+
+#Interest{
+    padding: 0px;
+    margin: 0px;
+    height: 1rem;
+}
+#Repayment{
+    padding: 0px;
+    margin: 0px;
+    height: 1rem;
+}
+.custom-radio {
+    appearance: none; /* Remove default styling */
+    width: 25px; /* Set the size */
+    height:25px !important;
+    border:2px solid hsl(200, 24%, 40%); /* Border styling */
+    border-radius: 50%; /* Make it round */
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem !important;
+}
+
+.custom-radio:checked {
+    border-color: hsl(61, 70%, 52%); /* Checked border color */
+}
+
+.custom-radio:checked::before {
+    content: '';
+    display: block;
+    width: 14.4px; /* Inner circle size */
+    height: 14.4px;
+    background-color: hsl(61, 70%, 52%); /* Inner circle color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 25px;
+    background-color: hsl(61, 70%, 52%);
+    border: 0;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+    font-size: 1rem;
+    margin-top: 17.6px;
+    margin-bottom: 1.2rem;
+}
+
+
+.result {
+    background-color: hsla(202, 55%, 16%, 1);
+    padding: 25px;
+    text-align: center;
+    padding-top: 40px;
+    color: hsl(203, 41%, 72%);
+
+}
+h2{
+    color: white;
+}
+.completed{
+    background-color: hsl(202, 55%, 16%);
+    padding: 25px;
+    padding-top: 40px;
+    color: hsl(203, 41%, 72%) !important;
+    padding-bottom: 48px;
+}
+.dashboard{
+    background-color: hsl(201, 56%, 13%);
+    padding: 12.8px;
+    border-radius: 7px;
+    border-top:  4.5px solid hsl(61, 70%, 52%) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10.4px;
+    width: 100%;
+}
+.dashboard p{
+    margin: 0px;
+}
+hr{
+    margin: 0px;
+    height: 1px;
+    background-color: hsl(200, 26%, 54%);
+    border: 0px;
+}
+
+#monthly {
+    font-size: 2rem;
+    color: hsl(61, 70%, 52%);
+    font-weight: 700;
+}
+#repay{
+    font-size: 24px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.error{
+    margin: 0px  !important;
+    color: hsl(4, 69%, 50%) !important;
+    font-size: 12.8px;
+    margin-bottom: 0.9375rem !important;
+
+}
+.invisible{
+    display: none;
+}
+.result p{
+    margin: 0px;
+}
+button:hover{
+    background-color: hsla(61, 70%, 52%, 0.5);
+    cursor: url("./assets/images/pointinghand.svg"), pointer;
+
+
+}
+@media(min-width: 700px){
+    
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(202, 86%, 94%);
+    font-size: 16px;
+}
+.container{
+    display: flex;
+    max-width: 70%;
+    max-height: 78%;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 25px;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+
+}
+h1{
+    flex: 1;
+}
+form {
+    gap: 10px;
+}
+
+
+.calculator{
+    padding: 25px;
+    background-color: hsl(0, 0%, 100%);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    min-width: 250px;
+    
+}
+
+
+
+input{
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid hsl(200, 24%, 40%);
+    padding-left: 24px;
+
+}
+#amount{
+    padding-left: 56px;
+
+}
+#Term{
+    padding-right: 64px;
+    width: 100%;
+}
+
+#Euro{
+    height: 50px;
+    border-top-left-radius : 7px;
+    border-bottom-left-radius : 7px;
+
+    width: 40px;
+    font-size: 20px;
+    
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-left: 1px  solid hsl(200, 24%, 40%);
+
+}
+
+#years{
+    height: 50px;
+    border-top-right-radius : 7px;
+    border-bottom-right-radius : 7px;
+
+    width:4rem;
+    font-size: 17.6px;
+    font-weight: 700;
+    
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-right: 1px  solid hsl(200, 24%, 40%);
+
+}
+#percent{
+    height: 50px;
+    border-top-right-radius : 7px;
+    border-bottom-right-radius : 7px;
+
+    width:40px;
+    position: absolute;
+    font-size: 17.6px;
+    font-weight: 700;
+    border-top: 1px  solid hsl(200, 24%, 40%);
+    border-bottom: 1px  solid hsl(200, 24%, 40%);
+    border-right: 1px  solid hsl(200, 24%, 40%);
+
+}
+#Rate{
+    padding-right: 2.8rem;
+    width: 100%;
+}
+.radio{
+    border: 1px solid hsl(200, 24%, 40%);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 14.72px;
+    border-radius: 7px;
+
+}
+.radio:hover{
+    border: 1px solid hsl(61, 70%, 52%);
+    cursor: url("./assets/images/pointinghand.svg"), pointer;
+
+}
+.radio label{
+    color: hsl(202, 55%, 16%) !important;
+    font-weight: 700;
+}
+#Interest{
+    padding: 0px;
+    margin: 0px;
+    height: 1rem;
+}
+#Repayment{
+    padding: 0px;
+    margin: 0px;
+    height: 1rem;
+}
+.custom-radio {
+    appearance: none; /* Remove default styling */
+    width: 25px; /* Set the size */
+    height:25px !important;
+    border:2px solid hsl(200, 24%, 40%); /* Border styling */
+    border-radius: 50%; /* Make it round */
+    display: inline-block;
+    position: relative;
+    margin-left: 1rem !important;
+}
+
+.custom-radio:checked {
+    border-color: hsl(61, 70%, 52%); /* Checked border color */
+}
+
+.custom-radio:checked::before {
+    content: '';
+    display: block;
+    width: 14.4px; /* Inner circle size */
+    height: 14.4px;
+    background-color: hsl(61, 70%, 52%); /* Inner circle color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 25px;
+    background-color: hsl(61, 70%, 52%);
+    border: 0;
+    font-weight: 700;
+    color: hsl(202, 55%, 16%);
+    font-size: 1rem;
+    margin-top: 17.6px;
+    margin-bottom: 1.2rem;
+}
+
+
+.result {
+    background-color: hsla(202, 55%, 16%, 1);
+    padding: 30px;
+    text-align: center;
+    padding-top: 40px;
+    color: hsl(203, 41%, 72%);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 60px;
+    align-items: center;
+    min-width: 250px;
+
+}
+h2{
+    color: white;
+}
+.completed{
+    background-color: hsl(202, 55%, 16%);
+    padding: 25px;
+    padding-top: 40px;
+    color: hsl(203, 41%, 72%) !important;
+    padding-bottom: 48px ;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    display: flex;
+    justify-content: center;
+    border-bottom-left-radius: 60px;
+    min-width: 250px;
+
+}
+.dashboard{
+    background-color: hsl(201, 56%, 13%);
+    padding: 12.8px;
+    border-radius: 7px;
+    border-top:  4.5px solid hsl(61, 70%, 52%) !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10.4px;
+    width: 100%;
+}
+.dashboard p{
+    margin: 0px;
+}
+hr{
+    margin: 0px;
+    height: 1px;
+    background-color: hsl(200, 26%, 54%);
+    border: 0px;
+}
+
+#monthly {
+    font-size: 2rem;
+    color: hsl(61, 70%, 52%);
+    font-weight: 700;
+}
+#repay{
+    font-size: 1.5rem;
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+.item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    flex: 1;
+
+}
+.error{
+    margin: 0px  !important;
+    color: hsl(4, 69%, 50%) !important;
+    font-size: 12.8px;
+    margin-bottom: 0.9375rem !important;
+
+}
+.invisible{
+    display: none;
+}
+.item{
+    flex: 1;
+}
+.flex{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+}

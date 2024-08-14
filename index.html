@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="calculator item">
+      <div class="header">
+      <h1>Mortgage Calculator</h1>
+      <p> Clear All</p>
+      </div>
+      
+     <form novalidate   id="mortgage">
+        <label for="amount">Mortgage Amount</label>
+        <input  type="number" id="amount" name="amount" required>
+        <label class="error invisible" id="Amount" for="amount">This field is required</label>
+        <div id="Euro">£</div>
+
+        <div class="flex  point">
+          <div class="item">
+          <label for="Term" >Mortgage Term</label>
+        <input type="number" id= "Term" name="Term" required>
+        <div id="years">years</div>
+        <label class="error invisible" id="term" for="Term">This field is required</label>
+
+          </div>
+
+          <div class="item" >
+            <label for="Rate" >Interest Rate</label>
+            <input type="number" id= "Rate" name="Rate" required>
+            <div id="percent">%</div>
+        <label class="error invisible" id="rate" for="Rate">This field is required</label>
+
+          </div>
+        </div>
+
+        <label for="Repayment" >Mortgage Type</label>
+        <div class="radio">
+        <input class="custom-radio" type="radio" id="Repayment" name="Repayment" value="Repayment">
+       <label class="TICK" for="Repayment">Repayment</label></div>
+        <div class="radio">
+          <input class="custom-radio" type="radio" id="Interest"  name="Interest" value="Interest">
+          <label class="TICK" for="Interest">Interest Only</label>
+        </div>
+        <label class="error invisible" id="radio-repay" for="Repayment" >This field is required</label>
+
+    
+     
+        <button id="submit" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
+           Calculate Repayments
+      </button>
+      
+    </form>
+    </div>
+  <!-- Empty results start -->
+  <div style="display: block ;" class="result item">
+    <img height="200px" src="./assets/images/illustration-empty.svg" >
+    <h2>Results shown here</h2>
+    <p>Complete the form and click “calculate repayments” to see what 
+      your monthly repayments would be.
+    </p>
+  </div>
+
+  
+
+  
+  <!-- Empty results end -->
+
+  <!-- Completed results start -->
+   <div style="display: none;" class="completed item">
+    <h2>Your results</h2>
+    <p>Your results are shown below based on the information you provided. 
+      To adjust the results, edit the form and click “calculate repayments” again.</p>
+      <div class="dashboard">
+        <div>Your monthly repayments</div>
+        <p id="monthly" ></p>
+        <hr>
+        <div>Total you'll repay over the term</div>
+        <p id="repay"></p>
+      </div>
+   </div>
+  <!-- Completed results end -->
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
